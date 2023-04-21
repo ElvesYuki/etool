@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LayoutBarLeft extends StatelessWidget {
+class LayoutBarLeft extends StatefulWidget {
   const LayoutBarLeft({Key? key}) : super(key: key);
 
+  @override
+  State<LayoutBarLeft> createState() => _LayoutBarLeftState();
+}
+
+class _LayoutBarLeftState extends State<LayoutBarLeft> {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(

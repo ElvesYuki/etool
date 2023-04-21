@@ -1,6 +1,11 @@
 import 'package:etool/page/layout/layout_bar_left.dart';
 import 'package:etool/page/layout/layout_title_top.dart';
+import 'package:etool/page/layout/layout_content.dart';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../controller/GetxController.dart';
 
 class LayoutPage extends StatefulWidget {
   const LayoutPage({super.key});
@@ -12,6 +17,7 @@ class LayoutPage extends StatefulWidget {
 class _LayoutPageState extends State<LayoutPage> {
   @override
   Widget build(BuildContext context) {
+    final MyController c = Get.put(MyController());
     return Row(
       children: [
         LayoutBarLeft(),
@@ -19,29 +25,7 @@ class _LayoutPageState extends State<LayoutPage> {
           child: Column(
             children: [
               LayoutTitleTop(),
-              Container(
-                color: Colors.white,
-                child: Row(
-                  children: [
-                    MaterialButton(
-                      color: Colors.blue,
-                      textColor: Colors.blue,
-                      onPressed: null,
-                      child: Text('按钮'),
-                    ),
-                    Expanded(
-                      child: Card(
-                        shadowColor: Colors.red,
-                        child: Text('添加功2能操作区'),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Card(
-                shadowColor: Colors.cyanAccent,
-                child: Text('内容操作区'),
-              )
+              LayoutContent(),
             ],
           ),
         ),

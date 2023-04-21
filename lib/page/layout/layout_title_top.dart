@@ -1,8 +1,10 @@
+import 'package:etool/page/controller/GetxController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 class LayoutTitleTop extends StatelessWidget {
-  const LayoutTitleTop({Key? key}) : super(key: key);
+  final MyController c = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +16,25 @@ class LayoutTitleTop extends StatelessWidget {
             'Redis Client',
             textDirection: TextDirection.ltr,
             style: TextStyle(
-              color: Colors.white70,
-              fontSize: 40,
+              color: Colors.black45,
+              fontSize: 24,
               fontWeight: FontWeight.w400,
               decoration: TextDecoration.none,
+            ),
+          ),
+        ),
+        Container(
+          padding: EdgeInsets.all(8),
+          child: GetBuilder<MyController>(
+            builder: (c) => Text(
+              '${c.count.obs.value}',
+              textDirection: TextDirection.ltr,
+              style: TextStyle(
+                color: Colors.black45,
+                fontSize: 24,
+                fontWeight: FontWeight.w400,
+                decoration: TextDecoration.none,
+              ),
             ),
           ),
         ),
